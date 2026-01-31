@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "label": "хронология развития <br/>  <span class=\"mainMenuText_accentColor\"> советского </span>  <br/> <span class=\"mainMenuText_accentText\"> монументального </span> <br/> <span class=\"mainMenuText_white\"> искусства </span> <br/> <span class=\"mainMenuText_Text\">  1930-1980-x гг. </span>",
+    "subMenuLabel": "Хронология развития советского <br/> монументального искусства <br/> 1930–1980‑х гг.",
+    "texts": [
+      "Архитектура и скульптура Санкт-Петербурга XVIII–XIX веков — наследие эпохи классицизма.",
+      "Прогуляйтесь по маршруту и узнайте о ключевых памятниках города."
+    ],
+    "photos": ["./photos/photo-1.jpg"]
+  },
+  {
+    "id": 2,
+    "label": "смена идеологических <br/> <span class=\"mainMenuText_priorities\">приоритетов</span> <br/> <span class=\"mainMenuText_revolutionCulture\">от революции </span> <br/> <span class=\"mainMenuText_cultureToWar\">  к культуре </span> <br/> <span class=\"mainMenuText_fromCultureToWar\">от культуры к войне</span>",
+    "subMenuLabel": "Смена идеологических приоритетов <br/> от революции к культуре, <br/> от культуры к войне",
+    "texts": [
+      "Город основан в 1703 году. К концу XVIII века сложился неповторимый облик центра.",
+      "Дворцы, набережные и монументы создают единый ансамбль."
+    ],
+    "photos": []
+  },
+  {
+    "id": 3,
+    "label": "<span class=\"mainMenuText_evolution\">эволюция</span> <br/> <span class=\"mainMenuText_artistic\">художественных</span> <br/> <span class=\"mainMenuText_methods\">методов</span> <br/> <span class=\"mainMenuText_materials\">и материалов</span>",
+    "subMenuLabel": "Эволюция художественных <br/> методов и материалов",
+    "texts": [
+      "Памятники классического Петербурга сохраняются и реставрируются.",
+      "Они остаются частью живой культуры города."
+    ],
+    "photos": []
+  },
+  {
+    "id": 4,
+    "label": "<span class=\"mainMenuText_role\">роль</span> <br/> <span class=\"mainMenuText_contestSystem\">конкурсной системы</span> <br/> <span class=\"mainMenuText_inCreation\">в создании</span> <br/> <span class=\"mainMenuText_monuments\">памятников</span>",
+    "subMenuLabel": "Роль конкурсной <br/> системы в создании <br/> памятников",
+    "texts": [
+      "Памятники классического Петербурга сохраняются и реставрируются.",
+      "Они остаются частью живой культуры города."
+    ],
+    "photos": []
+  }
+]

@@ -1,0 +1,399 @@
+.subMenu {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: var(--page-padding-y, 40px) var(--page-padding-x, 20px);
+  padding-top: var(--header-offset, 100px);
+  color: #fff;
+  overflow: hidden;
+}
+
+.subMenuBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center 20%;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+.subMenuContent {
+  padding-top: 40px;
+  flex: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.subMenuCenterText {
+  text-align: center;
+  margin-bottom: 60px;
+  padding: 0 20px;
+}
+
+
+.subMenuCenterText h1 {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  margin-bottom: 15px;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.subMenuCenterText p {
+  font-size: clamp(0.95rem, 2vw, 1.2rem);
+  opacity: 0.9;
+}
+
+/* Стили для страницы С фото */
+.subMenuMainContent {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: stretch;
+  margin-top: 20px;
+  height: calc(100vh - 300px);
+  height: calc(100dvh - 300px);
+  min-height: clamp(400px, 60vh, 500px);
+  width: 100%;
+}
+
+/* Стили для страницы БЕЗ фото */
+.subMenuMainContentCentered {
+  justify-content: center;
+  align-items: center;
+}
+
+.subMenuMainContentMenu {
+  display: flex;
+  max-width: 700px;
+  padding: 20px;
+}
+
+/* Стили для страницы БЕЗ фото */
+.subMenuMainContentCentered .subMenuMainContentMenu {
+  max-width: 100%;
+  width: 100%;
+  justify-content: center;
+}
+
+/* Стили для страницы С фото */
+.subMenuTextBlock {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  border-radius: 12px;
+}
+
+/* Стили для страницы БЕЗ фото */
+.subMenuTextBlockCentered {
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding: 0;
+  max-width: 800px;
+  width: 100%;
+  min-height: 650px;
+}
+
+/* Стили для страницы С фото */
+.subMenuBottomNavigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  width: 100%;
+  max-width: 600px;
+  bottom: 2%;
+}
+
+/* Стили для страницы БЕЗ фото */
+.subMenuTextBlockCentered .subMenuBottomNavigation {
+  position: relative;
+  bottom: auto;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+  width: 100%;
+  max-width: 100%;
+  padding: 0 20px;
+}
+
+* button{
+  font-family: 'Raleway-v4020', 'Raleway', serif;
+}
+
+.controlsNavMenu{
+  display: flex;
+  gap: 15px;
+}
+
+.subMenuTextBlock h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: #000;
+  font-family: 'P22 Constructivist Cyrillic', serif;
+}
+
+.subMenuTextBlock p {
+  font-size: 20px;
+  line-height: 1.6;
+  color: #221102;
+  font-family: 'Raleway-v4020', 'Raleway', serif;
+}
+
+.subMenuTextBlock p:last-child {
+  margin-bottom: 0;
+}
+
+.subMenuTextNavigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+
+.subMenuTextNavBtn {
+  font-family: 'P22 Constructivist Cyrillic', serif;
+  background: none ;
+  color: #000000;
+  border: none ;
+  border-radius: 2px;
+  width: 50px;
+  height: 50px;
+  font-size: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.subMenuTextNavBtn:hover:not(:disabled) {
+  transform: scale(1.1);
+}
+
+.subMenuTextNavBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.subMenuTextCounter {
+  font-size: 16px;
+  color: #fff;
+  font-weight: 500;
+  min-width: 80px;
+  text-align: center;
+}
+
+.subMenuTextPoint {
+  text-transform: uppercase;
+}
+
+/* Стили для страницы С фото */
+.subMenuGalleryBlock {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 900px;
+}
+
+.subMenuGalleryWrapper {
+  width: 100%;
+  max-width: 800px;
+}
+
+.subMenuGalleryWrapper :global(div[class*="photoGallery"]) {
+  max-width: 800px;
+}
+
+.subMenuGalleryWrapper :global(div[class*="photoGalleryContainer"]) {
+  min-height: 400px;
+  max-height: 500px;
+}
+
+.subMenuGalleryControls{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 800px;
+}
+
+.subMenuNav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.fullscreenButton{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 45px;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.subMenuGalleryNavBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  font-weight: 600;
+  background: none;
+  width: 45px;
+  height: 45px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.subMenuGalleryNavBtn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.subMenuGalleryNavBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.subMenuGalleryCounter {
+  font-size: 16px;
+  color: #fff;
+  font-weight: 500;
+  min-width: 80px;
+  text-align: center;
+  font-family: 'Raleway-v4020', 'Raleway', serif;
+}
+
+.subMenuBtn {
+  font-family: 'P22 Constructivist Cyrillic', serif;
+  padding: 12px 24px;
+  font-size: 0.95rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.subMenuBtnBack {
+  background: none;
+  color: #000;
+  border: 2px solid #000;
+  border-radius: 2px;
+}
+
+.subMenuBtnBack:hover {
+  transform: translateY(-2px);
+}
+
+.subMenuBtnMainMenu {
+  background: none;
+  color: #000;
+  border: 2px solid #000;
+  border-radius: 2px;
+}
+
+.subMenuBtnMainMenu:hover {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 968px) {
+  .subMenuMainContent {
+    flex-direction: column;
+    gap: 24px;
+    height: auto;
+    min-height: auto;
+  }
+
+  .subMenuMainContentMenu {
+    max-width: 100%;
+    padding: 16px;
+  }
+
+  .subMenuTextBlock {
+    flex: none;
+    padding: 20px 16px;
+  }
+
+  .subMenuTextBlock h2 {
+    font-size: clamp(1.125rem, 3vw, 1.5rem);
+  }
+
+  .subMenuTextBlock p {
+    font-size: clamp(0.9rem, 2vw, 1.25rem);
+  }
+
+  .subMenuGalleryBlock {
+    flex: none;
+  }
+
+  .subMenuCenterText h1 {
+    font-size: clamp(1.25rem, 4vw, 2rem);
+  }
+
+  .subMenuCenterText p {
+    font-size: clamp(0.9rem, 2vw, 1rem);
+  }
+
+  .subMenuBtn {
+    padding: 10px 20px;
+    font-size: clamp(0.8rem, 2vw, 0.95rem);
+  }
+
+  .subMenuTextNavBtn {
+    width: clamp(40px, 10vw, 50px);
+    height: clamp(40px, 10vw, 50px);
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .subMenu {
+    padding-top: clamp(70px, 14vw, 90px);
+  }
+
+  .subMenuContent {
+    padding-top: 24px;
+  }
+
+  .subMenuCenterText {
+    margin-bottom: 32px;
+    padding: 0 12px;
+  }
+
+  .subMenuBottomNavigation {
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+  }
+
+  .controlsNavMenu {
+    gap: 10px;
+  }
+
+  .subMenuGalleryNavBtn {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+}

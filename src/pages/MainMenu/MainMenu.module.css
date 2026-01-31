@@ -1,0 +1,237 @@
+.mainMenu {
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: var(--page-padding-y, 40px) var(--page-padding-x, 20px);
+  padding-top: var(--header-offset, 100px);
+  color: #fff;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  font-family: 'Raleway-v4020', 'Raleway', serif !important;
+}
+
+.mainMenuBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center 20%;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 400px;
+  margin-top: 20px;
+}
+
+.controls{
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.mainMenuContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  z-index: 1;
+}
+
+.mainMenuCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  width: 100%;
+}
+
+.mainMenuTextContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  left: 5%;
+  bottom: 28%;
+  max-width: 800px;
+  width: 100%;
+}
+
+.mainMenuTextBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 100%;
+  font-family: 'P22 Constructivist Cyrillic', serif;
+}
+
+.mainMenuText {
+  font-family: 'P22 Constructivist Cyrillic', serif !important;
+  text-align: justify;
+  line-height: 50px;
+  font-size: clamp(1rem, 4vw, 2rem);
+  color: #000000;
+  font-weight: bold;
+}
+
+
+/* Стили только внутри .mainMenu: <span class="mainMenuText_..."> в label */
+.mainMenu :global(.mainMenuText_white) { color: #fff; font-size: 69px; }
+.mainMenu :global(.mainMenuText_accentColor) { color: #89140A; font-size: 60px; }
+.mainMenu :global(.mainMenuText_Text) { font-size: 50px; }
+.mainMenu :global(.mainMenuText_accentText) { font-size: 40px; }
+/* id: 2 — приоритетов */
+.mainMenu :global(.mainMenuText_priorities) { font-size: 60px; }
+.mainMenu :global(.mainMenuText_cultureToWar) { font-size: 74px; color: #fff; }
+.mainMenu :global(.mainMenuText_fromCultureToWar) { font-size: 39px; }
+.mainMenu :global(.mainMenuText_revolutionCulture) { font-size: 55px; color: #89140A; }
+/* id: 3 — эволюция, художественных, методов, и материалов */
+.mainMenu :global(.mainMenuText_evolution) { color: #fff; font-size: 78px; }
+.mainMenu :global(.mainMenuText_artistic) { font-size: 44px; }
+.mainMenu :global(.mainMenuText_methods) { color: #89140A; font-size: 87px; }
+.mainMenu :global(.mainMenuText_materials) { font-size: 55px; }
+/* id: 4 — роль, конкурсной системы, в создании, памятников */
+.mainMenu :global(.mainMenuText_role) { color: #fff; font-size: 180px; }
+.mainMenu :global(.mainMenuText_contestSystem) { font-size: 38px; }
+.mainMenu :global(.mainMenuText_inCreation) { font-size: 67px; }
+.mainMenu :global(.mainMenuText_monuments) { color: #89140A; font-size: 67px; }
+
+.mainMenuDetailsBtn {
+  font-family: 'P22 Constructivist Cyrillic', serif;
+  padding: clamp(10px, 2vh, 15px) clamp(20px, 5vw, 40px);
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  background: none;
+  color: #89140A;
+  border: solid #000000 2px;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.mainMenuDetailsBtn:hover {
+  transform: translateY(-2px);
+}
+
+.mainMenuArrow {
+  background: none;
+  color: #000000;
+  border: none;
+  border-radius: 2px;
+  width: clamp(40px, 10vw, 50px);
+  height: clamp(40px, 10vw, 50px);
+  font-size: clamp(1.25rem, 4vw, 1.875rem);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.mainMenuArrow:hover {
+  transform: scale(1.1);
+}
+
+.mainMenuArrow:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.mainMenuCatalogBtnContainer {
+  position: absolute;
+  right: 6%;
+  bottom: 27%;
+}
+
+.mainMenuCatalogBtn {
+  font-family: 'P22 Constructivist Cyrillic', serif;
+  background: rgb(255, 255, 255, 0.4);
+  color: #000;
+  width: min(350px, 90vw);
+  padding: clamp(12px, 2vh, 15px) clamp(20px, 4vw, 30px);
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  border-radius: 2px;
+  border: solid #000 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.mainMenuCatalogBtn:hover {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 968px) {
+  .mainMenuTextContainer {
+    left: 2%;
+    right: 2%;
+    bottom: 38%;
+    max-width: 96%;
+  }
+
+  .mainMenuTextBlock {
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+  }
+
+  .mainMenuCatalogBtnContainer {
+    position: static;
+    transform: none;
+    margin-top: 24px;
+  }
+
+  .mainMenuCatalogBtn {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .buttons {
+    max-width: 100%;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 640px) {
+  .mainMenu {
+    padding-top: clamp(70px, 14vw, 90px);
+  }
+
+  .mainMenuTextContainer {
+    bottom: 42%;
+    padding: 0 8px;
+  }
+
+  .mainMenuCenter {
+    padding: 0 8px;
+  }
+
+  .mainMenuDetailsBtn {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .controls {
+    gap: 8px;
+  }
+}

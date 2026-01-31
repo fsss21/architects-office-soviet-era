@@ -1,0 +1,327 @@
+.catalogItemPage {
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: var(--page-padding-y, 40px) var(--page-padding-x, 20px);
+  padding-top: var(--header-offset, 100px);
+  color: #fff;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  font-family: 'Raleway-v4020', 'Raleway', serif !important;
+}
+
+.catalogItemBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center 20%;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+.catalogItemContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+  padding-top: 60px;
+}
+
+.catalogItemBackLink {
+  margin-top: 16px;
+  padding: 10px 20px;
+  font-family: 'Raleway-v4020', 'Raleway', serif;
+  font-size: 16px;
+  color: #CBB293;
+  background: rgba(203, 178, 147, 0.2);
+  border: 1px solid #CBB293;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.catalogItemBackLink:hover {
+  background: rgba(203, 178, 147, 0.35);
+}
+
+.catalogItemMain {
+  display: flex;
+  justify-content: space-evenly;
+  gap: clamp(20px, 3vw, 30px);
+  align-items: stretch;
+  min-height: calc(100vh - 200px);
+  min-height: calc(100dvh - 200px);
+}
+
+.catalogItemTextBlock {
+  flex: 0 0 35%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  padding: clamp(20px, 3vw, 30px);
+  color: #221102;
+  min-height: clamp(400px, 60vh, 600px);
+  width: 100%;
+  max-width: 500px;
+}
+
+.catalogItemName {
+  font-family: 'Raleway-v4020', 'Raleway', serif !important;
+  font-size: clamp(1.25rem, 3vw, 2rem);
+  color: #221102;
+  margin-bottom: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.catalogItemInfoRow {
+  display: flex;
+  margin-bottom: 15px;
+  gap: 10px;
+}
+
+.catalogItemInfoLabel {
+  font-family: 'Raleway-v4020', 'Raleway', serif !important;
+  font-weight: 600;
+  color: #221102;
+  min-width: 140px;
+}
+
+.catalogItemInfoValue {
+  font-family: 'Raleway-v4020', 'Raleway', serif !important;
+  color: #221102;
+  flex: 1;
+}
+
+.catalogItemDescription {
+  font-family: 'Raleway-v4020', 'Raleway', serif !important;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #221102;
+  text-align: left;
+  flex: 1;
+  margin-bottom: 20px;
+}
+
+.catalogItemDescription p {
+  margin-bottom: 12px;
+}
+
+.catalogItemDescription p:last-child {
+  margin-bottom: 0;
+}
+
+/* Навигация текста */
+.catalogItemTextNavigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid rgba(147, 137, 110, 0.3);
+}
+
+.catalogItemTextCounter {
+  font-family: 'Raleway-v4020', 'Raleway', serif !important;
+  font-size: 18px;
+  color: #666;
+}
+
+.catalogItemTextArrows {
+  display: flex;
+  gap: 10px;
+}
+
+.catalogItemTextNavBtn {
+  background: none;
+  color: #312916;
+  border: none;
+  border-radius: 4px;
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Raleway-v4020', 'Raleway', serif;
+}
+
+.catalogItemTextNavBtn:hover:not(:disabled) {
+  background: rgba(147, 137, 110, 0.3);
+  transform: scale(1.1);
+}
+
+.catalogItemTextNavBtn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Правая колонка - фото (60-65% ширины) */
+.catalogItemPhotoBlock {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1050px;
+  margin-right: 20px;
+  min-width: 0;
+}
+
+.catalogItemGallery {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  padding: 30px;
+  min-height: 500px;
+}
+
+/* Увеличиваем размер фото на странице предмета */
+.catalogItemGallery > div {
+  width: 100% !important;
+  max-width: none !important;
+}
+
+.catalogItemGallery > div > div {
+  width: 100% !important;
+  min-height: 450px !important;
+  max-height: 550px !important;
+  aspect-ratio: auto !important;
+}
+
+/* Навигация фото */
+.catalogItemPhotoNavigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.catalogItemPhotoNavBtn {
+  background: none;
+  color: #fff;
+  border: 1px solid #fff; 
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Raleway-v4020', 'Raleway', serif;
+}
+
+.catalogItemPhotoNavBtn:hover:not(:disabled) {
+  transform: scale(1.1);
+}
+
+.catalogItemPhotoNavBtn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.catalogItemPhotoCounter {
+  font-family: 'Raleway-v4020', 'Raleway', serif !important;
+  font-size: 18px;
+  color: #fff;
+  min-width: 80px;
+  text-align: center;
+}
+
+.catalogItemFullscreenBtn {
+  background: none;
+  color: #fff;
+  border: none;
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  font-family: 'Raleway-v4020', 'Raleway', serif;
+}
+
+.catalogItemFullscreenBtn:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 968px) {
+  .catalogItemMain {
+    flex-direction: column;
+    gap: 20px;
+    min-height: auto;
+  }
+
+  .catalogItemTextBlock {
+    flex: none;
+    min-height: auto;
+    max-width: 100%;
+  }
+
+  .catalogItemPhotoBlock {
+    flex: none;
+    margin-right: 0;
+  }
+
+  .catalogItemGallery {
+    min-height: clamp(320px, 50vh, 450px);
+    padding: 20px 16px;
+  }
+
+  .catalogItemGallery > div > div {
+    min-height: 320px !important;
+    max-height: 420px !important;
+  }
+
+  .catalogItemName {
+    font-size: clamp(1.125rem, 3.5vw, 1.5rem);
+  }
+
+  .catalogItemInfoLabel {
+    min-width: 120px;
+  }
+}
+
+@media (max-width: 640px) {
+  .catalogItemPage {
+    padding-top: clamp(70px, 14vw, 90px);
+  }
+
+  .catalogItemContent {
+    padding-top: 24px;
+  }
+
+  .catalogItemTextBlock {
+    padding: 16px 12px;
+  }
+
+  .catalogItemName {
+    margin-bottom: 12px;
+  }
+
+  .catalogItemTextNavBtn,
+  .catalogItemPhotoNavBtn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .catalogItemPhotoNavigation {
+    padding: 12px;
+    gap: 12px;
+  }
+}

@@ -1,0 +1,141 @@
+/* Верх: подписи (label). Ниже: линия с точками; на активной точке — стрелка вверх */
+.progressLine {
+  width: 100%;
+  padding-top: 40px; /* место под подписи над линией */
+  padding-bottom: clamp(12px, 2vw, 20px);
+  padding-left: 0;
+  padding-right: 0;
+  min-height: 72px;
+  position: relative;
+  overflow: visible;
+}
+
+.progressLineLine {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  width: 100%;
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 0 clamp(8px, 2vw, 16px);
+  height: 56px; /* высота ряда с линией и точками */
+  position: relative;
+}
+
+.progressLineLine::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: #FFFFFF;
+  z-index: 1;
+  transform: translateY(-50%);
+}
+
+.progressLinePoint {
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  flex: 1;
+  height: 56px;
+}
+
+.progressLinePointActive {
+  transition: all 0.3s ease;
+}
+
+/* Подпись — над линией */
+.progressLineLabel {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-bottom: 12px;
+  max-width: min(500px, 85vw);
+  min-height: 40px;
+  background: transparent;
+  color: #fff;
+  padding: clamp(8px, 1.5vw, 10px) clamp(12px, 2vw, 16px);
+  line-height: 1.35;
+  letter-spacing: 0.02em;
+  border-radius: 2px;
+  font-size: clamp(0.8rem, 2.2vw, 1.0625rem);
+  text-transform: uppercase;
+  text-align: center;
+  opacity: 1;
+  transform: translateX(-50%);
+  transition: all 0.3s ease;
+  pointer-events: auto;
+  cursor: pointer;
+  word-wrap: break-word;
+  white-space: normal;
+  width: max-content;
+  font-family: 'Raleway-v4020', 'Raleway', serif;
+  border: 1px solid transparent;
+  font-weight: 600;
+}
+
+.progressLineLabel br {
+  display: block;
+  content: '';
+  margin-top: 0.35em;
+}
+
+.progressLinePointActive .progressLineLabel {
+  background: #fff;
+  transition: all 0.3s ease;
+  color: #000;
+}
+
+/* Неактивная точка — кружок; активная — стрелка конусом вверх (на одной линии с линией) */
+.progressLineArrow {
+  width: clamp(10px, 2.5vw, 14px);
+  height: clamp(10px, 2.5vw, 14px);
+  border-radius: 50%;
+  background: #fff;
+  border: none;
+  transition: all 0.3s ease;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+}
+
+.progressLinePointActive .progressLineArrow {
+  width: 0;
+  height: 0;
+  border-radius: 0;
+  background: transparent;
+  border-left: clamp(10px, 3vw, 16px) solid transparent;
+  border-right: clamp(10px, 3vw, 16px) solid transparent;
+  border-bottom: clamp(20px, 6vw, 35px) solid #fff;
+}
+
+@media (max-width: 640px) {
+  .progressLine {
+    padding-top: 64px;
+    padding-bottom: 10px;
+  }
+
+  .progressLineLine {
+    height: 48px;
+  }
+
+  .progressLinePoint {
+    height: 48px;
+  }
+
+  .progressLineLabel {
+    margin-bottom: 8px;
+    max-width: min(280px, 90vw);
+    font-size: clamp(0.7rem, 3vw, 0.85rem);
+  }
+}
+

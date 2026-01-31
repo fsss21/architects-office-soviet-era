@@ -1,0 +1,90 @@
+/* Локальный шрифт из папки fonts */
+@font-face {
+  font-family: 'P22 Constructivist Cyrillic';
+  src: url('./fonts/p22constructivistcyrillic.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Шрифт Raleway загружается через link в index.html (Google Fonts с поддержкой кириллицы).
+   Raleway-v4020 — алиас для использования в стилях; fallback 'Raleway' — тот же шрифт. */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: 'Raleway-v4020', 'Raleway', serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #f5f5f5;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Адаптивные отступы (учитывают safe-area на телефонах с вырезом) */
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+  --page-padding-x: clamp(12px, 4vw, 40px);
+  --page-padding-y: clamp(16px, 3vh, 40px);
+  --header-offset: clamp(70px, 12vw, 100px);
+}
+
+html {
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  min-height: 100dvh;
+  color: #333;
+  background: linear-gradient(to bottom, #f5f5f5, #e8e8e8);
+  font-family: 'Raleway-v4020', 'Raleway', serif;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #333;
+}
+
+a {
+  font-weight: 500;
+}
+
+
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #242424;
+  }
+  
+  body {
+    background: linear-gradient(to bottom, #242424, #1a1a1a);
+    color: rgba(255, 255, 255, 0.87);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    color: rgba(255, 255, 255, 0.87);
+  }
+}
+

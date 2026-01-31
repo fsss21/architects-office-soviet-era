@@ -1,0 +1,43 @@
+{
+  "name": "architects-office-soviet-era",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "server": "node src/server/index.js",
+    "build:server:win": "node -e \"try { require('fs').unlinkSync('build/launch.exe'); } catch (e) {}\" && pkg src/server/index.js --targets node18-win-x64 --output build/launch.exe --config package.json",
+    "build:server:mac": "node -e \"try { require('fs').unlinkSync('build/server'); } catch (e) {}\" && pkg src/server/index.js --targets node18-macos-x64 --output build/server --config package.json",
+    "build:win": "npm run build && npm run build:server:win",
+    "build:mac": "npm run build && npm run build:server:mac",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.13.3",
+    "@emotion/styled": "^11.13.0",
+    "@mui/icons-material": "^6.1.6",
+    "@mui/material": "^6.1.6",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.28.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "fs-extra": "^11.2.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.3",
+    "pkg": "^5.8.1",
+    "vite": "^5.4.10"
+  },
+  "pkg": {
+    "scripts": [
+      "src/server/index.js",
+      "src/server/utils/serverSetup.js"
+    ],
+    "assets": [
+      "build/**/*"
+    ],
+    "outputPath": "build"
+  }
+}
