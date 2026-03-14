@@ -5,27 +5,10 @@ import Header from '../../components/Header/Header'
 import styles from './Catalog.module.css'
 import catalogImg from '../../assets/catalog_img.png'
 import catalogImg4k from '../../assets/catalog_img-4k.png'
-import griboedovImg from '../../assets/griboedov_img.png'
-import korsakovImg from '../../assets/korsakov_img.png'
-import ostrovskiImg from '../../assets/ostrovski_img.png'
-import ourSityImg from '../../assets/our_sity_img.png'
 
 import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 
-
-// Маппинг года из creationTime в эпохи (по данным catalogItems.json)
-const getErasFromCreationTime = (creationTime) => {
-  if (!creationTime) return []
-  const match = String(creationTime).match(/\d{4}/)
-  const year = match ? parseInt(match[0], 10) : null
-  if (year === null) return []
-  const eras = []
-  if (year < 1800) eras.push('XVIII век')
-  if (year >= 1800 && year < 1900) eras.push('XIX век')
-  if (year >= 1760 && year <= 1840) eras.push('Эпоха классицизма')
-  return eras
-}
 
 const matchesSearch = (item, query) => {
   if (!query || !query.trim()) return true
@@ -44,16 +27,15 @@ const matchesSearch = (item, query) => {
 function Catalog() {
   const navigate = useNavigate()
   const { selectedSculptors, selectedEras, selectedMaterials, searchQuery } = useCatalogFilter()
-  const [currentItemIndex, setCurrentItemIndex] = useState(0)
+  const [currentPage, setCurrentPage] = useState(0)
   const [imageSrc, setImageSrc] = useState(catalogImg)
   const [items, setItems] = useState([])
 
-  // Маппинг изображений по названиям памятников
-  const monumentImages = {
-    'Памятник Грибоедову': griboedovImg,
-    'Памятник Римскому-Корсакову': korsakovImg,
-    'Памятник Островскому': ostrovskiImg,
-    'Скульптура «Наш город»': ourSityImg
+  // Путь к фото из public/data/images (файл задаётся в catalogItems.json в поле image)
+  const getItemImageSrc = (item) => {
+    if (item?.image) return `/data/images/${encodeURIComponent(item.image)}`
+    if (item?.photos?.length) return item.photos[0]
+    return null
   }
 
   useEffect(() => {
@@ -77,33 +59,30 @@ function Catalog() {
   const filteredItems = useMemo(() => {
     return items.filter((item) => {
       if (selectedSculptors.length > 0 && !selectedSculptors.includes(item.sculptor)) return false
-      if (selectedEras.length > 0) {
-        const itemEras = getErasFromCreationTime(item.creationTime)
-        const hasEra = selectedEras.some((era) => itemEras.includes(era))
-        if (!hasEra) return false
-      }
-      if (selectedMaterials.length > 0) {
-        const material = item.material || ''
-        if (!selectedMaterials.includes(material)) return false
-      }
+      if (selectedEras.length > 0 && !selectedEras.includes(item.creationTime)) return false
+      if (selectedMaterials.length > 0 && !selectedMaterials.includes(item.material || '')) return false
       if (!matchesSearch(item, searchQuery)) return false
       return true
     })
   }, [items, selectedSculptors, selectedEras, selectedMaterials, searchQuery])
 
+  const MAX_CATALOG_ITEMS = 4
+  const maxStartIndex = Math.max(0, filteredItems.length - MAX_CATALOG_ITEMS)
+  const displayItems = filteredItems.slice(currentPage, currentPage + MAX_CATALOG_ITEMS)
+
   useEffect(() => {
-    setCurrentItemIndex((prev) => Math.min(prev, Math.max(0, filteredItems.length - 1)))
-  }, [filteredItems.length])
+    setCurrentPage((prev) => Math.min(prev, maxStartIndex))
+  }, [maxStartIndex])
 
   const handleNextItem = () => {
-    if (filteredItems.length > 0 && currentItemIndex < filteredItems.length - 1) {
-      setCurrentItemIndex((prev) => prev + 1)
+    if (currentPage < maxStartIndex) {
+      setCurrentPage((prev) => prev + 1)
     }
   }
 
   const handlePrevItem = () => {
-    if (currentItemIndex > 0) {
-      setCurrentItemIndex((prev) => prev - 1)
+    if (currentPage > 0) {
+      setCurrentPage((prev) => prev - 1)
     }
   }
 
@@ -127,48 +106,39 @@ function Catalog() {
         {/* Центральная область с предметами */}
         <div className={styles.catalogCenter}>
           <div className={styles.catalogItemsContainer}>
-            {filteredItems.length === 0 ? (
+            {displayItems.length === 0 ? (
               <p className={styles.catalogEmpty}>По вашему запросу ничего не найдено. Измените фильтры или поиск.</p>
             ) : (
-            filteredItems.map((item, index) => {
-              let blockPositionClass = ''
-              if (item.id === 1) blockPositionClass = styles.catalogItemTop
-              else if (item.id === 3) blockPositionClass = styles.catalogItemMiddle
-              else blockPositionClass = styles.catalogItemBottom
-
-              return (
-                <div
-                  key={item.id}
-                  className={`${styles.catalogItem} ${blockPositionClass}`}
-                  onClick={() => handleItemClick(item)}
-                >
-                <div className={styles.catalogItemImage}>
-                  {monumentImages[item.name] ? (
-                    <img
-                      src={monumentImages[item.name]}
-                      alt={item.name ?? ''}
-                      onError={(e) => {
-                        if (e?.target) e.target.style.display = 'none'
-                      }}
-                    />
-                  ) : item.photos?.length > 0 ? (
-                    <img
-                      src={item.photos[0]}
-                      alt={item.name ?? ''}
-                      onError={(e) => {
-                        if (e?.target) e.target.style.display = 'none'
-                      }}
-                    />
-                  ) : null}
-                </div>
-                <div className={styles.catalogItemOverlay}>
-                  <h3 className={styles.catalogItemTitle}>
-                    {item?.name || item?.title || ''}
-                  </h3>
-                </div>
-              </div>
-              )
-            })
+              displayItems.map((item, index) => {
+                let blockPositionClass = ''
+                if (index === 0) blockPositionClass = styles.catalogItemTop
+                else if (index === 2) blockPositionClass = styles.catalogItemMiddle
+                else blockPositionClass = styles.catalogItemBottom
+                return (
+                  <div
+                    key={item.id}
+                    className={`${styles.catalogItem} ${blockPositionClass}`}
+                    onClick={() => handleItemClick(item)}
+                  >
+                    <div className={styles.catalogItemImage}>
+                      {getItemImageSrc(item) ? (
+                        <img
+                          src={getItemImageSrc(item)}
+                          alt={item.name ?? ''}
+                          onError={(e) => {
+                            if (e?.target) e.target.style.display = 'none'
+                          }}
+                        />
+                      ) : null}
+                    </div>
+                    <div className={styles.catalogItemOverlay}>
+                      <h3 className={styles.catalogItemTitle}>
+                        {item?.name || item?.title || ''}
+                      </h3>
+                    </div>
+                  </div>
+                )
+              })
             )}
           </div>
 
@@ -177,16 +147,16 @@ function Catalog() {
             <button 
               className={styles.catalogArrow}
               onClick={handlePrevItem}
-              disabled={filteredItems.length === 0 || currentItemIndex === 0}
-              aria-label="Предыдущий предмет"
+              disabled={displayItems.length === 0 || currentPage === 0}
+              aria-label="Предыдущие предметы"
             >
               <ArrowLeftIcon fontSize='large'/>
             </button>
             <button
               className={styles.catalogArrow}
               onClick={handleNextItem}
-              disabled={filteredItems.length === 0 || currentItemIndex === filteredItems.length - 1}
-              aria-label="Следующий предмет"
+              disabled={displayItems.length === 0 || currentPage >= maxStartIndex}
+              aria-label="Следующие предметы"
             >
               <ArrowRightIcon fontSize='large'/>
             </button>

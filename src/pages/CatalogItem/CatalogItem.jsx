@@ -5,10 +5,6 @@ import Header from '../../components/Header/Header'
 import styles from './CatalogItem.module.css'
 import catalogItemImg from '../../assets/catalog_item_img.png'
 import catalogItemImg4k from '../../assets/catalog_item_img-4k.png'
-import griboedovImg from '../../assets/griboedov_img.png'
-import korsakovImg from '../../assets/korsakov_img.png'
-import ostrovskiImg from '../../assets/ostrovski_img.png'
-import ourSityImg from '../../assets/our_sity_img.png'
 
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew'
@@ -24,14 +20,6 @@ function CatalogItem() {
   const [currentTextIndex, setCurrentTextIndex] = useState(0)
   const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0)
   const [imageSrc, setImageSrc] = useState(catalogItemImg)
-
-  // Маппинг изображений по названиям памятников
-  const monumentImages = {
-    'Памятник Грибоедову': griboedovImg,
-    'Памятник Римскому-Корсакову': korsakovImg,
-    'Памятник Островскому': ostrovskiImg,
-    'Скульптура «Наш город»': ourSityImg
-  }
 
   useEffect(() => {
     // Определяем, нужно ли использовать 4K изображение
@@ -102,12 +90,11 @@ function CatalogItem() {
     }
   }
 
-  // Получаем изображения для текущего предмета
+  // Изображения из public/data/images (поле image в catalogItems.json) или item.photos
   const getItemImages = () => {
-    if (item && monumentImages[item.name]) {
-      return [monumentImages[item.name]]
-    }
-    return item?.photos || []
+    if (!item) return []
+    if (item.image) return [`/data/images/${encodeURIComponent(item.image)}`]
+    return item.photos || []
   }
 
   if (loading) {

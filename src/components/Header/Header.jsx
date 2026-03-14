@@ -10,20 +10,7 @@ import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
 
 
-const ERA_OPTIONS = ['XVIII век', 'XIX век', 'Эпоха классицизма']
-const MATERIAL_OPTIONS = ['Бронза', 'Гранит', 'Мрамор', 'Камень']
-
-const getErasFromCreationTime = (creationTime) => {
-  if (!creationTime) return []
-  const match = String(creationTime).match(/\d{4}/)
-  const year = match ? parseInt(match[0], 10) : null
-  if (year === null) return []
-  const eras = []
-  if (year < 1800) eras.push('XVIII век')
-  if (year >= 1800 && year < 1900) eras.push('XIX век')
-  if (year >= 1760 && year <= 1840) eras.push('Эпоха классицизма')
-  return eras
-}
+/** Эпохи и материалы берутся из catalogItems.json (уникальные значения creationTime и material) */
 
 const matchesSearch = (item, query) => {
   if (!query || !query.trim()) return true
@@ -60,6 +47,8 @@ function Header() {
   const [filtersOpen, setFiltersOpen] = useState(false)
   const [searchOpen, setSearchOpen] = useState(false)
   const [sculptors, setSculptors] = useState([])
+  const [eraOptions, setEraOptions] = useState([])
+  const [materialOptions, setMaterialOptions] = useState([])
   const [catalogItemsForNav, setCatalogItemsForNav] = useState([])
 
   useEffect(() => {
@@ -71,10 +60,14 @@ function Header() {
         })
         .then(data => {
           if (!Array.isArray(data)) return
-          const unique = [...new Set(data.map(item => item.sculptor).filter(Boolean))]
-          setSculptors(unique)
+          const uniqueSculptors = [...new Set(data.map(item => item.sculptor).filter(Boolean))]
+          setSculptors(uniqueSculptors)
+          const uniqueEras = [...new Set(data.map(item => item.creationTime).filter(Boolean))]
+          setEraOptions(uniqueEras)
+          const uniqueMaterials = [...new Set(data.map(item => item.material).filter(Boolean))]
+          setMaterialOptions(uniqueMaterials)
         })
-        .catch(() => {})
+        .catch(() => { })
     }
   }, [isCatalogPage])
 
@@ -88,7 +81,7 @@ function Header() {
         .then(data => {
           setCatalogItemsForNav(Array.isArray(data) ? data : [])
         })
-        .catch(() => {})
+        .catch(() => { })
     } else {
       setCatalogItemsForNav([])
     }
@@ -98,14 +91,8 @@ function Header() {
     if (!catalogItemsForNav.length) return []
     return catalogItemsForNav.filter((item) => {
       if (selectedSculptors.length > 0 && !selectedSculptors.includes(item.sculptor)) return false
-      if (selectedEras.length > 0) {
-        const itemEras = getErasFromCreationTime(item.creationTime)
-        if (!selectedEras.some((era) => itemEras.includes(era))) return false
-      }
-      if (selectedMaterials.length > 0) {
-        const material = item.material || ''
-        if (!selectedMaterials.includes(material)) return false
-      }
+      if (selectedEras.length > 0 && !selectedEras.includes(item.creationTime)) return false
+      if (selectedMaterials.length > 0 && !selectedMaterials.includes(item.material || '')) return false
       if (!matchesSearch(item, searchQuery)) return false
       return true
     })
@@ -192,7 +179,7 @@ function Header() {
                 disabled={!prevItem}
                 aria-label="Предыдущий предмет"
               >
-                <ArrowBackIosNewIcon fontSize="medium" />
+
               </button>
               <button
                 type="button"
@@ -201,7 +188,7 @@ function Header() {
                 disabled={!nextItem}
                 aria-label="Следующий предмет"
               >
-                <ArrowForwardIosIcon fontSize="medium" />
+
               </button>
             </div>
             <button
@@ -210,7 +197,7 @@ function Header() {
               onClick={handleHeaderCloseItem}
               aria-label="Закрыть, вернуться в каталог"
             >
-              <CloseIcon fontSize="medium" />
+
             </button>
           </div>
         )}
@@ -226,7 +213,7 @@ function Header() {
                 aria-haspopup="true"
                 aria-label="Открыть фильтры"
               >
-                <MenuIcon fontSize='large'/>
+                <MenuIcon fontSize='large' />
               </button>
               {filtersOpen && (
                 <div className={styles.headerDropdown} onClick={e => e.stopPropagation()}>
@@ -238,7 +225,7 @@ function Header() {
                       onClick={() => setFiltersOpen(false)}
                       aria-label="Закрыть фильтры"
                     >
-                      <CloseIcon/>
+                      <CloseIcon />
                     </button>
                   </div>
 
@@ -271,7 +258,7 @@ function Header() {
                       </button>
                     </div>
                     <div className={styles.headerFilterOptions}>
-                      {ERA_OPTIONS.map(name => (
+                      {eraOptions.map(name => (
                         <label key={name} className={styles.headerFilterCheck}>
                           <input
                             type="checkbox"
@@ -282,7 +269,6 @@ function Header() {
                         </label>
                       ))}
                     </div>
-                    
                   </div>
 
                   <div className={styles.headerFilterBlock}>
@@ -293,7 +279,7 @@ function Header() {
                       </button>
                     </div>
                     <div className={styles.headerFilterOptions}>
-                      {MATERIAL_OPTIONS.map(name => (
+                      {materialOptions.map(name => (
                         <label key={name} className={styles.headerFilterCheck}>
                           <input
                             type="checkbox"
@@ -304,7 +290,7 @@ function Header() {
                         </label>
                       ))}
                     </div>
-                    
+
                   </div>
 
                   <button type="button" className={styles.headerShowBtn} onClick={handleShowFilters}>
@@ -322,7 +308,7 @@ function Header() {
                 aria-expanded={searchOpen}
                 aria-label="Открыть поиск"
               >
-                <SearchIcon fontSize='large'/>
+                <SearchIcon fontSize='large' />
               </button>
               {searchOpen && (
                 <div className={styles.headerSearchPanel} onClick={e => e.stopPropagation()}>
