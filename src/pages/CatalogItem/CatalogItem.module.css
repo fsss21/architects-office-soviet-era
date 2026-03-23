@@ -176,7 +176,7 @@
 }
 
 .catalogItemGallery {
-  flex: 1;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -323,5 +323,140 @@
   .catalogItemPhotoNavigation {
     padding: 12px;
     gap: 12px;
+  }
+}
+
+@media (min-width: 2560px) {
+  .catalogItemPage {
+    padding-top: 140px;
+  }
+
+  .catalogItemContent {
+    padding-top: 20px;
+  }
+
+  .catalogItemMain {
+    gap: 50px;
+    min-height: calc(100vh - 260px);
+  }
+
+  .catalogItemTextBlock {
+    max-width: 700px;
+    min-height: 820px;
+    padding: 44px;
+  }
+
+  .catalogItemName {
+    font-size: 3rem;
+    margin-bottom: 28px;
+  }
+
+  .catalogItemInfoRow,
+  .catalogItemDescription {
+    font-size: 1.45rem;
+  }
+
+  .catalogItemInfoLabel {
+    min-width: 200px;
+  }
+
+  .catalogItemTextCounter,
+  .catalogItemPhotoCounter {
+    font-size: 26px;
+  }
+
+  .catalogItemTextNavBtn,
+  .catalogItemPhotoNavBtn,
+  .catalogItemFullscreenBtn {
+    width: 64px;
+    height: 64px;
+  }
+
+  .catalogItemTextNavBtn svg,
+  .catalogItemPhotoNavBtn svg,
+  .catalogItemFullscreenBtn svg {
+    font-size: 38px;
+  }
+
+  .catalogItemPhotoBlock {
+    max-width: 1450px;
+  }
+
+  .catalogItemGallery {
+    min-height: 700px;
+    padding: 40px;
+  }
+
+  .catalogItemGallery > div > div {
+    min-height: 620px !important;
+    max-height: 820px !important;
+  }
+}
+
+@media (min-width: 3840px) {
+  .catalogItemPage {
+    padding-top: 180px;
+  }
+
+  .catalogItemContent {
+    padding-top: 130px;
+  }
+
+  .catalogItemMain {
+    gap: 80px;
+    min-height: calc(100vh - 360px);
+  }
+
+  .catalogItemTextBlock {
+    max-width: 1040px;
+    min-height: 1200px;
+    padding: 30px 50px 130px 60px;
+  }
+
+  .catalogItemName {
+    font-size: 4.4rem;
+    margin-bottom: 44px;
+  }
+
+  .catalogItemInfoRow,
+  .catalogItemDescription {
+    font-size: 2.1rem;
+  }
+
+  .catalogItemInfoLabel {
+    min-width: 300px;
+  }
+
+  .catalogItemTextCounter,
+  .catalogItemPhotoCounter {
+    font-size: 36px;
+    min-width: 140px;
+  }
+
+  .catalogItemTextNavBtn,
+  .catalogItemPhotoNavBtn,
+  .catalogItemFullscreenBtn {
+    width: 88px;
+    height: 88px;
+  }
+
+  .catalogItemTextNavBtn svg,
+  .catalogItemPhotoNavBtn svg,
+  .catalogItemFullscreenBtn svg {
+    font-size: 54px;
+  }
+
+  .catalogItemPhotoBlock {
+    max-width: 2200px;
+  }
+
+  .catalogItemGallery {
+    min-height: 1060px;
+    padding: 64px;
+  }
+
+  .catalogItemGallery > div > div {
+    min-height: 920px !important;
+    max-height: 1180px !important;
   }
 }

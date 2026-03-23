@@ -198,3 +198,78 @@
   border-color: rgba(255, 255, 255, 0.8) !important;
 }
 
+@media (min-width: 2560px) {
+  .photoGallery {
+    max-width: 900px;
+  }
+
+  .photoGalleryContainer {
+    min-height: 460px;
+    max-height: 560px;
+    margin-bottom: 28px;
+  }
+
+  .photoGalleryArrow {
+    width: 64px;
+    height: 64px;
+    font-size: 38px;
+  }
+
+  .photoGalleryFullscreen .photoGalleryContainer {
+    max-width: 1800px !important;
+    max-height: 1100px !important;
+  }
+
+  .photoGalleryFullscreen .photoGalleryArrow {
+    width: 90px;
+    height: 90px;
+    font-size: 54px;
+  }
+
+  .photoGalleryClose {
+    width: 72px !important;
+    height: 72px !important;
+    font-size: 42px !important;
+    top: 30px !important;
+    right: 30px !important;
+  }
+}
+
+@media (min-width: 3840px) {
+  .photoGallery {
+    max-width: 1400px;
+  }
+
+  .photoGalleryContainer {
+    min-height: 720px;
+    max-height: 940px;
+    margin-bottom: 40px;
+    border-radius: 18px;
+  }
+
+  .photoGalleryArrow {
+    width: 90px;
+    height: 90px;
+    font-size: 56px;
+  }
+
+  .photoGalleryFullscreen .photoGalleryContainer {
+    max-width: 2700px !important;
+    max-height: 1600px !important;
+  }
+
+  .photoGalleryFullscreen .photoGalleryArrow {
+    width: 130px;
+    height: 130px;
+    font-size: 70px;
+  }
+
+  .photoGalleryClose {
+    width: 104px !important;
+    height: 104px !important;
+    font-size: 62px !important;
+    top: 44px !important;
+    right: 44px !important;
+  }
+}
+

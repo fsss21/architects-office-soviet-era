@@ -235,3 +235,97 @@
     gap: 8px;
   }
 }
+
+@media (min-width: 2560px) {
+  .mainMenu {
+    padding-top: 140px;
+  }
+
+  .mainMenuTextContainer {
+    max-width: 1100px;
+    left: 5%;
+  }
+
+  .mainMenuText {
+    font-size: 52px;
+  }
+
+  .buttons {
+    max-width: 820px;
+    margin-top: 28px;
+  }
+
+  .controls {
+    gap: 16px;
+  }
+
+  .mainMenuDetailsBtn {
+    padding: 18px 52px;
+    font-size: 30px;
+  }
+
+  .mainMenuArrow {
+    width: 64px;
+    height: 64px;
+    font-size: 34px;
+  }
+
+  .mainMenuArrow svg {
+    font-size: 38px;
+  }
+
+  .mainMenuCatalogBtnContainer {
+    right: 8%;
+  }
+
+  .mainMenuCatalogBtn {
+    width: 460px;
+    padding: 20px 36px;
+    font-size: 30px;
+  }
+}
+
+@media (min-width: 3840px) {
+  .mainMenu {
+    padding-top: 180px;
+  }
+
+  .mainMenuTextContainer {
+    max-width: 1500px;
+    left: 6%;
+  }
+
+  .mainMenuText {
+    font-size: 72px;
+  }
+
+  .buttons {
+    max-width: 1120px;
+    margin-top: 36px;
+  }
+
+  .controls {
+    gap: 20px;
+  }
+
+  .mainMenuDetailsBtn {
+    padding: 24px 70px;
+    font-size: 42px;
+  }
+
+  .mainMenuArrow {
+    width: 88px;
+    height: 88px;
+    font-size: 46px;
+  }
+
+  .mainMenuArrow svg {
+    font-size: 54px;
+  }
+
+  .mainMenuCatalogBtn {
+    width: 640px;
+    padding: 28px 52px;
+    font-size: 42px;
+  }
+}

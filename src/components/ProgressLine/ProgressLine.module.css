@@ -139,3 +139,87 @@
   }
 }
 
+@media (min-width: 2560px) {
+  .progressLine {
+    min-height: 150px;
+    height: 150px;
+    padding-top: 50px;
+    padding-bottom: 20px;
+  }
+
+  .progressLineLine {
+    max-width: 2500px;
+    height: 150px;
+  }
+
+  .progressLineLine::before {
+    top: 80px;
+    height: 4px;
+  }
+
+  .progressLinePoint {
+    height: 150px;
+  }
+
+  .progressLineLabel {
+    max-width: 560px;
+    min-height: 56px;
+    font-size: 20px;
+    padding: 12px 16px;
+  }
+
+  .progressLineArrow {
+    width: 18px;
+    height: 18px;
+    top: 80px;
+  }
+
+  .progressLinePointActive .progressLineArrow {
+    border-left: 16px solid transparent;
+    border-right: 16px solid transparent;
+    border-bottom: 35px solid #fff;
+  }
+}
+
+@media (min-width: 3840px) {
+  .progressLine {
+    min-height: 220px;
+    height: 220px;
+    padding-top: 90px;
+    padding-bottom: 24px;
+  }
+
+  .progressLineLine {
+    max-width: 3600px;
+    height: 220px;
+  }
+
+  .progressLineLine::before {
+    top: 118px;
+    height: 6px;
+  }
+
+  .progressLinePoint {
+    height: 220px;
+  }
+
+  .progressLineLabel {
+    max-width: 860px;
+    min-height: 80px;
+    font-size: 34px;
+    padding: 18px 24px;
+  }
+
+  .progressLineArrow {
+    width: 26px;
+    height: 26px;
+    top: 118px;
+  }
+
+  .progressLinePointActive .progressLineArrow {
+    border-left: 26px solid transparent;
+    border-right: 26px solid transparent;
+    border-bottom: 62px solid #fff;
+  }
+}
+

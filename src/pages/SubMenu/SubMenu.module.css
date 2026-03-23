@@ -397,3 +397,180 @@
     font-size: 1rem;
   }
 }
+
+@media (min-width: 2560px) {
+  .subMenu {
+    padding-top: 120px;
+  }
+
+  .subMenuContent {
+    padding-top: 50px;
+  }
+
+  .subMenuMainContent {
+    height: calc(100vh - 360px);
+    min-height: 700px;
+    margin-top: 0;
+  }
+
+  .subMenuMainContentMenu {
+    max-width: 940px;
+    padding: 30px;
+  }
+
+  .subMenuTextBlock {
+    padding: 40px;
+  }
+
+  .subMenuTextBlockCentered {
+    max-width: 1200px;
+    min-height: 860px;
+  }
+
+  .subMenuTextBlock h2 {
+    font-size: 2.7rem;
+    margin-bottom: 28px;
+  }
+
+  .subMenuTextBlock p {
+    font-size: 30px;
+    line-height: 1.75;
+  }
+
+  .subMenuBottomNavigation {
+    max-width: 860px;
+  }
+
+  .subMenuTextNavBtn,
+  .subMenuGalleryNavBtn {
+    width: 64px;
+    height: 64px;
+    font-size: 30px;
+  }
+
+  .subMenuTextNavBtn svg,
+  .subMenuGalleryNavBtn svg,
+  .fullscreenButton svg {
+    font-size: 38px;
+  }
+
+  .subMenuBtn {
+    padding: 16px 34px;
+    font-size: 1.25rem;
+  }
+
+  .subMenuGalleryBlock {
+    max-width: 1300px;
+  }
+
+  .subMenuGalleryWrapper,
+  .subMenuGalleryWrapper :global(div[class*="photoGallery"]) {
+    max-width: 1120px;
+  }
+
+  .subMenuGalleryWrapper :global(div[class*="photoGalleryContainer"]) {
+    min-height: 520px;
+    max-height: 700px;
+  }
+
+  .subMenuGalleryControls {
+    max-width: 1120px;
+  }
+
+  .subMenuGalleryCounter {
+    font-size: 24px;
+    min-width: 120px;
+  }
+
+  .fullscreenButton {
+    font-size: 60px;
+  }
+}
+
+@media (min-width: 3840px) {
+  .subMenu {
+    padding-top: 180px;
+  }
+
+  .subMenuContent {
+    padding-top: 80px;
+  }
+
+  .subMenuMainContent {
+    height: calc(100vh - 460px);
+    min-height: 980px;
+  }
+
+  .subMenuMainContentMenu {
+    max-width: 1320px;
+    padding: 44px;
+  }
+
+  .subMenuTextBlock {
+    padding: 56px;
+  }
+
+  .subMenuTextBlockCentered {
+    max-width: 1700px;
+    min-height: 1180px;
+  }
+
+  .subMenuTextBlock h2 {
+    font-size: 3.8rem;
+    margin-bottom: 40px;
+  }
+
+  .subMenuTextBlock p {
+    font-size: 42px;
+    line-height: 1.75;
+  }
+
+  .subMenuBottomNavigation {
+    max-width: 1240px;
+  }
+
+  .subMenuTextNavBtn,
+  .subMenuGalleryNavBtn {
+    width: 88px;
+    height: 88px;
+    font-size: 40px;
+  }
+
+  .subMenuTextNavBtn svg,
+  .subMenuGalleryNavBtn svg,
+  .fullscreenButton svg {
+    font-size: 54px;
+  }
+
+  .subMenuBtn {
+    padding: 24px 50px;
+    font-size: 1.8rem;
+  }
+
+  .subMenuGalleryBlock {
+    max-width: 1900px;
+  }
+
+  .subMenuGalleryWrapper,
+  .subMenuGalleryWrapper :global(div[class*="photoGallery"]) {
+    max-width: 1600px;
+  }
+
+  .subMenuGalleryWrapper :global(div[class*="photoGalleryContainer"]) {
+    min-height: 780px;
+    max-height: 980px;
+  }
+
+  .subMenuGalleryControls {
+    max-width: 1600px;
+  }
+
+  .subMenuGalleryCounter {
+    font-size: 34px;
+    min-width: 160px;
+  }
+
+  .fullscreenButton {
+    font-size: 86px;
+  }
+}

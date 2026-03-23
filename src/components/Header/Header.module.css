@@ -431,3 +431,149 @@
     width: min(240px, 90vw);
   }
 }
+
+@media (min-width: 2560px) {
+  .header {
+    padding: 45px 0 0 0;
+    margin-left: 4%;
+  }
+
+  .headerTitle {
+    font-size: 40px;
+    letter-spacing: 3px;
+  }
+
+  .headerButtons,
+  .headerItemNav {
+    margin-right: 40px;
+  }
+
+  .headerItemNav {
+    width: 375px;
+    top: 45px;
+    gap: 24px;
+  }
+
+  .headerItemNavBtn,
+  .headerBtnFilters {
+    width: 64px;
+    height: 64px;
+  }
+
+  .headerItemNavClose {
+    width: 170px;
+    height: 64px;
+  }
+
+  .headerBtnSearch {
+    width: 120px;
+    height: 64px;
+  }
+
+  .headerDropdown {
+    min-width: 560px;
+    max-width: 700px;
+    padding: 28px;
+  }
+
+  .headerDropdownTitle,
+  .headerFilterLabel,
+  .headerFilterCheck,
+  .headerResetBtn {
+    font-size: 24px;
+  }
+
+  .headerShowBtn {
+    font-size: 22px;
+    padding: 16px 24px;
+  }
+
+  .headerSearchPanel {
+    min-width: 900px;
+    padding: 16px 20px;
+    gap: 18px;
+  }
+
+  .headerSearchInput {
+    padding: 14px 16px;
+    font-size: 22px;
+  }
+
+  .headerSearchClose {
+    width: 54px;
+    height: 54px;
+  }
+}
+
+@media (min-width: 3840px) {
+  .header {
+    padding: 65px 0 0 0;
+    margin-left: 5%;
+  }
+
+  .headerTitle {
+    font-size: 60px;
+    letter-spacing: 4px;
+  }
+
+  .headerButtons,
+  .headerItemNav {
+    margin-right: 65px;
+  }
+
+  .headerItemNav {
+    width: 570px;
+    top: 60px;
+    gap: 30px;
+  }
+
+  .headerItemNavBtn,
+  .headerBtnFilters {
+    width: 105px;
+    height: 105px;
+  }
+
+  .headerItemNavClose {
+    width: 250px;
+    height: 92px;
+  }
+
+  .headerBtnSearch {
+    width: 180px;
+    height: 92px;
+  }
+
+  .headerDropdown {
+    min-width: 850px;
+    max-width: 1080px;
+    padding: 40px;
+  }
+
+  .headerDropdownTitle,
+  .headerFilterLabel,
+  .headerFilterCheck,
+  .headerResetBtn {
+    font-size: 34px;
+  }
+
+  .headerShowBtn {
+    font-size: 32px;
+    padding: 24px 32px;
+  }
+
+  .headerSearchPanel {
+    min-width: 1400px;
+    padding: 24px 30px;
+    gap: 24px;
+  }
+
+  .headerSearchInput {
+    padding: 22px 24px;
+    font-size: 32px;
+  }
+
+  .headerSearchClose {
+    width: 80px;
+    height: 80px;
+  }
+}
