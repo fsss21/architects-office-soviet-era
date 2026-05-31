@@ -29,17 +29,17 @@ function MainMenu() {
       .then(data => {
         const formattedTexts = Array.isArray(data)
           ? data.map(item => {
-              const text =
-                item.label ??
-                (Array.isArray(item.labelSegments)
-                  ? item.labelSegments.map((s) => (s && s.text) || '').join(' ')
-                  : '')
-              return {
-                id: item.id,
-                text,
-                labelSegments: item.labelSegments,
-              }
-            })
+            const text =
+              item.label ??
+              (Array.isArray(item.labelSegments)
+                ? item.labelSegments.map((s) => (s && s.text) || '').join(' ')
+                : '')
+            return {
+              id: item.id,
+              text,
+              labelSegments: item.labelSegments,
+            }
+          })
           : []
         setTexts(formattedTexts)
       })
@@ -68,7 +68,7 @@ function MainMenu() {
 
   return (
     <div className={styles.mainMenu}>
-      <div 
+      <div
         className={styles.mainMenuBackground}
         style={{ backgroundImage: `url(${imageSrc})` }}
       />
@@ -77,8 +77,8 @@ function MainMenu() {
         {/* Центральный блок с текстом */}
         <div className={styles.mainMenuCenter}>
           <div className={styles.mainMenuTextContainer}>
-          <div className={styles.mainMenuTextBlock}>
-              <span 
+            <div className={styles.mainMenuTextBlock}>
+              <span
                 className={styles.mainMenuText}
                 dangerouslySetInnerHTML={{ __html: texts[currentTextIndex]?.text || '' }}
               />
@@ -91,13 +91,13 @@ function MainMenu() {
                   Подробнее
                 </button>
                 <div className={styles.controls}>
-                  <button 
+                  <button
                     className={styles.mainMenuArrow}
                     onClick={handlePrevText}
                     disabled={currentTextIndex === 0}
                     aria-label="Предыдущий текст"
                   >
-                    <ArrowLeftIcon fontSize='large'/>
+                    <ArrowLeftIcon fontSize='large' />
                   </button>
                   <button
                     className={styles.mainMenuArrow}
@@ -105,24 +105,21 @@ function MainMenu() {
                     disabled={currentTextIndex === texts.length - 1}
                     aria-label="Следующий текст"
                   >
-                    <ArrowRightIcon fontSize='large'/>
+                    <ArrowRightIcon fontSize='large' />
                   </button>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
         {/* Кнопка "Перейти в каталог" справа от центра */}
-        <div className={styles.mainMenuCatalogBtnContainer}>
-          <button
-            type="button"
-            className={styles.mainMenuCatalogBtn}
-            onClick={handleCatalog}
-          >
-            Перейти в каталог
-          </button>
-        </div>
+        <button
+          type="button"
+          className={styles.mainMenuCatalogBtn}
+          onClick={handleCatalog}
+        >
+          Перейти <br /> в каталог <br /> скульптур
+        </button>
       </div>
     </div>
   )

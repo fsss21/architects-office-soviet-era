@@ -132,7 +132,7 @@
   left: 0;
   right: 0;
   min-height: clamp(60px, 12vh, 80px);
-  background: #8B0000;
+  background: #34506C;
   padding: clamp(12px, 2vh, 24px) clamp(14px, 3vw, 28px);
   color: #fff;
   z-index: 2;

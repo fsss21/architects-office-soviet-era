@@ -73,7 +73,7 @@
 
 .catalogItemName {
   font-family: 'Raleway-v4020', 'Raleway', serif !important;
-  font-size: clamp(1.25rem, 3vw, 2rem);
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
   color: #221102;
   margin-bottom: 20px;
   font-weight: 700;

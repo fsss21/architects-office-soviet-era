@@ -114,7 +114,7 @@
   padding: clamp(10px, 2vh, 15px) clamp(20px, 5vw, 40px);
   font-size: clamp(1rem, 2.5vw, 1.5rem);
   background: none;
-  color: #89140A;
+  color: #fff;
   border: solid #000000 2px;
   border-radius: 2px;
   cursor: pointer;
@@ -155,24 +155,29 @@
   pointer-events: none;
 }
 
-.mainMenuCatalogBtnContainer {
-  position: absolute;
-  right: 6%;
-  bottom: 27%;
-}
+
 
 .mainMenuCatalogBtn {
-  font-family: 'P22 Constructivist Cyrillic', serif;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 6%;
+  top: 27%;
+  height: 350px;
+  width: 350px;
+  border-radius: 2px;
+  font-weight: bold;
+  border: solid #000 2px;
   background: rgb(255, 255, 255, 0.4);
+  font-family: 'Raleway-v4020', 'Raleway', sans-serif;
   color: #000;
   width: min(350px, 90vw);
   padding: clamp(12px, 2vh, 15px) clamp(20px, 4vw, 30px);
   font-size: clamp(1rem, 2.5vw, 1.5rem);
-  border-radius: 2px;
-  border: solid #000 2px;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-weight: 600;
+ 
   text-transform: uppercase;
 }
 

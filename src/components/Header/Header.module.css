@@ -19,11 +19,11 @@
   display: flex;
   align-items: flex-start;
   text-align: center;
-  font-size: clamp(1rem, 4vw, 1.75rem);
+  font-size: clamp(1rem, 4vw, 1.5rem);
   font-weight: normal;
   color: #FFFFFF;
   text-transform: uppercase;
-  letter-spacing: clamp(1px, 0.2vw, 2px);
+  letter-spacing: clamp(1px, 0.2vw, 2.2px);
   margin: 0;
   font-family: 'Raleway-v4020', 'Raleway', serif;
 }
@@ -133,14 +133,14 @@
   max-height: 80vh;
   overflow-y: auto;
   overflow-x: hidden;
-  background: #FBF7F3;
+  background: #EDF5FE;
   border: none;
   border-radius: 2px;
   padding: 20px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
   z-index: 1002;
   scrollbar-width: thin;
-  scrollbar-color: #826748 #FBF7F3;
+  scrollbar-color: #5C7898 #FBF7F3;
 }
 
 .headerDropdown::-webkit-scrollbar {
@@ -153,12 +153,12 @@
 }
 
 .headerDropdown::-webkit-scrollbar-thumb {
-  background: #826748;
+  background: #5C7898;
   border-radius: 4px;
 }
 
 .headerDropdown::-webkit-scrollbar-thumb:hover {
-  background: #221102;
+  background: #FBF7F3;
 }
 
 .headerDropdownHeader {
@@ -185,7 +185,7 @@
   padding: 0;
   background: none;
   border: none;
-  color: #521E1E;
+  color: #240B0B;
   font-size: 18px;
   line-height: 1;
   cursor: pointer;
@@ -295,7 +295,7 @@
   right: 0;
   margin-top: 8px;
   min-width: 620px;
-  background: #fff;
+  background: #EDF5FE;
   border: 1px solid rgba(203, 178, 147, 0.4);
   border-radius: 8px;
   padding: 12px 14px;
@@ -351,7 +351,7 @@
   background: rgba(255, 255, 255, 0.1);
   border: none;
   border-radius: 50%;
-  color: #521E1E;
+  color: #240B0B;
   cursor: pointer;
   display: flex;
   align-items: center;
