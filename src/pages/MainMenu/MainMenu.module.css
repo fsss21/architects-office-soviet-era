@@ -64,58 +64,47 @@
   flex-direction: column;
   justify-content: center;
   position: absolute;
-  left: 5%;
-  bottom: 28%;
+  left: 1%;
+  bottom: 15%;
   max-width: 800px;
+  height: 600px;
   width: 100%;
 }
 
 .mainMenuTextBlock {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: flex-start;
   max-width: 100%;
-  font-family: 'P22 Constructivist Cyrillic', serif;
+  height: 500px;
+  color: #fff;
+  font-family: 'Soviet', serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.25;
 }
 
 .mainMenuText {
-  font-family: 'P22 Constructivist Cyrillic', serif !important;
+  font-family: 'Soviet', serif !important;
   text-align: justify;
-  line-height: 50px;
-  font-size: clamp(1rem, 4vw, 2rem);
-  color: #000000;
+  line-height: inherit;
+  font-size: inherit;
+  color: #fff;
   font-weight: bold;
 }
 
-
-/* Стили только внутри .mainMenu: <span class="mainMenuText_..."> в label */
-.mainMenu :global(.mainMenuText_white) { color: #fff; font-size: 69px; }
-.mainMenu :global(.mainMenuText_accentColor) { color: #89140A; font-size: 60px; }
-.mainMenu :global(.mainMenuText_Text) { font-size: 50px; }
-.mainMenu :global(.mainMenuText_accentText) { font-size: 40px; }
-/* id: 2 — приоритетов */
-.mainMenu :global(.mainMenuText_priorities) { font-size: 60px; }
-.mainMenu :global(.mainMenuText_cultureToWar) { font-size: 74px; color: #fff; }
-.mainMenu :global(.mainMenuText_fromCultureToWar) { font-size: 39px; }
-.mainMenu :global(.mainMenuText_revolutionCulture) { font-size: 55px; color: #89140A; }
-/* id: 3 — эволюция, художественных, методов, и материалов */
-.mainMenu :global(.mainMenuText_evolution) { color: #fff; font-size: 78px; }
-.mainMenu :global(.mainMenuText_artistic) { font-size: 44px; }
-.mainMenu :global(.mainMenuText_methods) { color: #89140A; font-size: 87px; }
-.mainMenu :global(.mainMenuText_materials) { font-size: 55px; }
-/* id: 4 — роль, конкурсной системы, в создании, памятников */
-.mainMenu :global(.mainMenuText_role) { color: #fff; font-size: 180px; }
-.mainMenu :global(.mainMenuText_contestSystem) { font-size: 38px; }
-.mainMenu :global(.mainMenuText_inCreation) { font-size: 67px; }
-.mainMenu :global(.mainMenuText_monuments) { color: #89140A; font-size: 67px; }
+.mainMenuTextBlock :global([class*='mainMenuText_']) {
+  color: #fff;
+  font-size: inherit;
+}
 
 .mainMenuDetailsBtn {
-  font-family: 'P22 Constructivist Cyrillic', serif;
+  font-family: 'Soviet', serif;
   padding: clamp(10px, 2vh, 15px) clamp(20px, 5vw, 40px);
   font-size: clamp(1rem, 2.5vw, 1.5rem);
   background: none;
   color: #fff;
-  border: solid #000000 2px;
+  border: solid #fff 2px;
   border-radius: 2px;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -251,7 +240,7 @@
     left: 5%;
   }
 
-  .mainMenuText {
+  .mainMenuTextBlock {
     font-size: 52px;
   }
 
@@ -300,7 +289,7 @@
     left: 6%;
   }
 
-  .mainMenuText {
+  .mainMenuTextBlock {
     font-size: 72px;
   }
 

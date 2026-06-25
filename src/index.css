@@ -1,7 +1,7 @@
 /* Локальный шрифт из папки fonts */
 @font-face {
-  font-family: 'P22 Constructivist Cyrillic';
-  src: url('./fonts/p22constructivistcyrillic.otf') format('opentype');
+  font-family: 'Soviet';
+  src: url('./fonts/soviet.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
